@@ -1,11 +1,32 @@
 .app__navbar{
     display: flex;
-    padding: 4vh;
-    width: 92vw;
+    padding: 2vw;
+    width: 96vw;
     justify-content: space-between;
     align-items: center;
 
 }
 .app__navbar-logo{
     font-size: 4vh;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+.app__navbar-menu{
+    width: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a{
+        text-decoration: none;
+        color: var(--primary-dark);
+        font-weight: 500;
+        font-size: 2.1vh;
+        transition: all ease-in-out 0.2s;
+
+        &:hover{
+            border-bottom: 4px solid var(--secondary-color);
+            border-radius: 2px;
+        }
+    }
 }
