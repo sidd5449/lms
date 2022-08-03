@@ -1,28 +1,47 @@
 import React, { useEffect, useState } from 'react';
 import { client, urlFor } from '../../client';
+import './CoursePage.scss';
+import { FiArrowRight } from 'react-icons/fi';
 
 const CoursePage = () => {
-    const [course, setcourse] = useState([]);
 
-    useEffect(() => {
-      const query = '*[_type == "subject"]';
-      client.fetch(query)
-        .then((data) =>{
-          setcourse(data);
-          console.log(data);
-        })
-    }, []);
-  
-  
-    return (
-      <div className="app__coursepage">
-        {course.map((courses, index) => (
-            <div className="app__course-card">
-                <img src={course.imgUrl} alt="" srcset="" />
-            </div>
+  const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    const query = '*[_type == "subject"]';
+    client.fetch(query)
+      .then((data) =>{
+        setCourses(data);
+        console.log(data);
+      })
+  }, [])
+
+  return (
+    <div className="app__coursepage">
+      <div className="app__coursepage-taglines">
+        <h2>Welcome back, User!</h2>
+        <p>Let's get you started with your courses..</p>
+      </div>
+      <div className="app__coursepage-cards">
+        {courses.map((course, index) => (
+          <div className="app__coursepage-card">
+            <img src={urlFor(course.imgUrl)} alt={course.subjectName} />
+            <p>{course.subjectName}</p>
+            <p>{course.subjectFac}</p>
+            <a href="/">
+
+              <FiArrowRight
+                size={20}
+                color= 'var(--secondary-color)'
+              />
+            </a>
+
+            
+          </div>
         ))}
       </div>
-    
+      
+    </div>
   )
 }
 

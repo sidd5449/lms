@@ -1,0 +1,56 @@
+.app__coursepage{
+    background: none;
+    display: flex;
+    flex-direction: column;
+    padding: 7vw 7vw 0 12vw ;
+    overflow-y: auto;
+}
+
+.app__coursepage-taglines{
+
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    justify-content: flex-start;
+
+    h2{
+        color: var(--primary-color);
+        font-size: 7vh;
+        font-weight: 800;
+    }
+    p{
+        color: var(--background-light);
+        font-size: 3vh;
+    }
+}
+.app__coursepage-cards{
+    display: flex;
+    width: 78vw;
+    gap: 2vw;
+    overflow-x: scroll;
+    padding: 6vw 0;
+
+    ::-webkit-scrollbar{
+        width: 0;
+        height: 0;
+    }
+
+
+}
+.app__coursepage-card{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: var(--primary-dark);
+    padding: 2vh;
+    gap: 3vh;
+    border-radius: 2vh;
+
+    img{
+        width: 14vw;
+        border-radius: 1vh;
+    }
+    p{
+        color: var(--background-light);
+    }
+}

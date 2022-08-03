@@ -13,7 +13,9 @@ html{
 
 body{
   overflow-x: hidden;
-  background-color: var(--background-light);
+  background: linear-gradient(-45deg, var(--secondary-dark), var(--primary-dark));
+  height: 100vh;
+  overflow-y: auto;
 }
 ::-webkit-scrollbar{
   width: 0;
@@ -22,10 +24,10 @@ body{
 :root{
   --background-light: #e3e3e3;
   --sec-background-light: #F0D3F7;
-  --primary-color: #079032;
-  --secondary-color: #0bb39a;
-  --primary-dark: #302F4D;
-  --secondary-dark: #120D31;
+  --primary-color: #1590a3;
+  --secondary-color: #0d6ac2;
+  --primary-dark: #1a191c;
+  --secondary-dark: #0e0d13;
   --tertiary-color: rgb(193, 61, 17);
 }
 
