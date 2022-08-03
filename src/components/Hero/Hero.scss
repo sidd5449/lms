@@ -1,0 +1,50 @@
+.app__hero{
+    display: flex;
+    justify-content: space-between;
+    padding: 6vw;
+    align-items: center;
+
+}
+.app__hero-left{
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    align-items: flex-start;
+    width: 44vw;
+
+    h1{
+        font-size: 8vh;
+    }
+
+    p{
+        font-size: 3vh;
+    }
+
+    .button-group{
+        display: flex;
+        justify-content: space-between;
+        width: 18vw;
+        margin-top: 2vh;
+
+        a{
+            text-decoration: none;
+    
+            button{
+                border: none;
+                background-color: var(--primary-color);
+                padding: 2vh;
+                font-size: 2vh;
+                color: var(--background-light);
+                border-radius: 2vh;
+                box-shadow: 3px 2px 12px rgb(151, 154, 151);
+            }
+        }
+    }
+
+}
+
+#secondary{
+    background: none;
+    border: 2px solid var(--tertiary-color);
+    color: var(--primary-dark);
+}
