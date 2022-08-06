@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { client, urlFor } from '../../client';
 import './CoursePage.scss';
 import { FiArrowRight } from 'react-icons/fi';
+import { Link, Route } from 'react-router-dom';
 
 const CoursePage = () => {
 
@@ -12,7 +13,6 @@ const CoursePage = () => {
     client.fetch(query)
       .then((data) =>{
         setCourses(data);
-        console.log(data);
       })
   }, [])
 
@@ -28,13 +28,13 @@ const CoursePage = () => {
             <img src={urlFor(course.imgUrl)} alt={course.subjectName} />
             <p>{course.subjectName}</p>
             <p>{course.subjectFac}</p>
-            <a href="/">
 
-              <FiArrowRight
-                size={20}
-                color= 'var(--secondary-color)'
-              />
-            </a>
+              <Link to={course._id}>
+                <FiArrowRight
+                  size={20}
+                  color= 'var(--secondary-color)'
+                />
+              </Link>
 
             
           </div>
