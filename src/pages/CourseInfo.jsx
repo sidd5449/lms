@@ -1,18 +1,32 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { client } from '../client';
 
 const CourseInfo = () => {
-    const id = useParams();
+    const docId = useParams();
+    console.log(docId);
     const [subject, setsubject] = useState();
-    const fetchSub = async () => {
-        const {subData} = await axios.get(`https://cyhyv1x0.api.sanity.io/v2022-02-01/data/doc/production/${id}`)
-        console.log(subData);
-  }
+    // const apiUrl = `https://cyhyv1x0.api.sanity.io/v2022-02-01/data/doc/production/`;
+    // console.log(apiUrl);
+    
+    client.getDocument(docId._id).then((doc) => {
+      setsubject(doc);
+      console.log(subject);
+    });
+    // const fetchSub = async () => {
+    //     const {subData} =await axios.get(`https://cyhyv1x0.api.sanity.io/v2022-02-01/data/doc/production/${docId._id}`)
+    //     setsubjects(subData);  
+    // };
+    
+
+    
+    
+    
   
     return (
     <div className="app__courseinfo">
-
+        <h1>{subject?.subjectName}</h1>
     </div>
   )
 }
