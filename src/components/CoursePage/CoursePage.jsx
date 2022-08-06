@@ -40,6 +40,9 @@ const CoursePage = () => {
           </div>
         ))}
       </div>
+      <div className="app__coursepage-notices">
+        <div className="app__coursepage-notices-wrapper"></div>
+      </div>
       
     </div>
   )
