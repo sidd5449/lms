@@ -31,7 +31,7 @@
         align-items: flex-start;
         padding: 1vh;
         border-radius: 1.8vh;
-        border: 1px solid transparent;
+        border: 2px solid transparent;
         transition: ease-in-out 0.2s;
 
         &:hover{
@@ -49,6 +49,7 @@
             color: var(--primary-dark);
             font-size: 1.8vh;
             margin-top: 1vh;
+            text-align: left;
         }
         #subjectName{
             color: var(--black-color);

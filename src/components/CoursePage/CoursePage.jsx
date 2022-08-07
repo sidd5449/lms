@@ -42,7 +42,9 @@ const CoursePage = () => {
         ))}
       </div>
       <div className="app__coursepage-notices">
-        <div className="app__coursepage-notices-wrapper"></div>
+        <div className="app__coursepage-notices-wrapper">
+          <h2>Notices</h2>
+        </div>
       </div>
       
     </div>
