@@ -6,7 +6,7 @@ import logo from '../../assets/logo.png';
 const Navbar = () => {
   return (
     <div className="app__navbar">
-        <h3>LMS</h3>
+        <h3>EduCater</h3>
         <div className="app__navbar-menu">
             
               <a href="/">

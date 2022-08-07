@@ -22,6 +22,7 @@ const CoursePage = () => {
     client.fetch(noticeQuery)
       .then((noticeData) =>{
         setNotices(noticeData);
+        console.log(notices);
       })
   }, []);
 
@@ -51,7 +52,8 @@ const CoursePage = () => {
         ))}
       </div>
       <div className="app__coursepage-notices">
-        <h2>Notices</h2>
+        <div className="app__notices-wrapper">
+          <h2>Notices</h2>
           {notices.map((notice, index) => (
             <div className="app__notice">
               
@@ -62,6 +64,10 @@ const CoursePage = () => {
               </div>
             </div>
           ))}  
+        </div>
+        <div className="app__upcoming">
+          
+        </div>
       </div>
       
     </div>
@@ -69,3 +75,4 @@ const CoursePage = () => {
 }
 
 export default CoursePage
+///change the order of notices in descending order of dates

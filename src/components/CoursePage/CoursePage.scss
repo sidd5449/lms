@@ -20,10 +20,10 @@
 }
 .app__coursepage-cards{
     display: flex;
-    overflow-x: scroll;
+    flex-wrap: wrap;
     padding: 4vh 0;
-    width: 76vw;
-    gap: 3vw;
+    width: 80vw;
+    gap: 2vw;
     
     .app__coursepage-card{
         display: flex;
@@ -72,10 +72,13 @@ h2{
     font-size: 2.5vh;
     margin-top: 8vh;
 }
+.app__notices-wrapper, .app__upcoming{
+    display: flex;
+    flex-direction: column;
+}
 .app__coursepage-notices{
     display: flex;
     width: 46vw;
-    flex-direction: column;
     height: 66vh;
     overflow-y: auto;
 
