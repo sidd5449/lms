@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 html{
   scroll-behavior: smooth;
@@ -13,7 +12,7 @@ html{
 
 body{
   overflow-x: hidden;
-  background: linear-gradient(-45deg, var(--secondary-dark), var(--primary-dark));
+  background: var(--background-light);
   height: 100vh;
   overflow-y: auto;
 }
@@ -22,12 +21,13 @@ body{
 }
 
 :root{
-  --background-light: #e3e3e3;
-  --sec-background-light: #F0D3F7;
-  --primary-color: #1590a3;
-  --secondary-color: #0d6ac2;
-  --primary-dark: #1a191c;
-  --secondary-dark: #0e0d13;
-  --tertiary-color: rgb(193, 61, 17);
+  --background-light: #F1F6FD;
+  --sec-background-light: #B9CAEF;
+  --primary-color: #010825;
+  --secondary-color: #5692C1;
+  --primary-dark: #424556;
+  --black-color: rgb(7, 0, 54);
+  --secondary-dark: #969AAC;
+  --tertiary-color: #fc3f00;
 }
 

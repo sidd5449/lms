@@ -1,56 +1,73 @@
 .app__coursepage{
-    background: none;
-    display: flex;
-    flex-direction: column;
-    padding: 7vw 7vw 0 12vw ;
-    overflow-y: auto;
+    margin-left: 16vw;
+    padding: 4vw;
 }
-
 .app__coursepage-taglines{
-
-    display: flex;
-    flex-direction: column;
-    gap: 4vh;
-    justify-content: flex-start;
-
-    h2{
-        color: var(--primary-color);
-        font-size: 7vh;
-        font-weight: 800;
-    }
+    gap: 2vh;
     p{
-        color: var(--background-light);
+        color: var(--primary-dark);
+    }
+
+    #welcome{
         font-size: 3vh;
+        color: var(--primary-dark);
+
+        span{
+            font-weight: 600;
+            color: var(--black-color);
+        }
     }
 }
 .app__coursepage-cards{
     display: flex;
-    width: 78vw;
-    gap: 2vw;
     overflow-x: scroll;
-    padding: 6vw 0;
+    padding: 4vh 0;
+    width: 76vw;
+    gap: 3vw;
+    
+    .app__coursepage-card{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1vh;
+        border-radius: 1.8vh;
+        border: 1px solid transparent;
+        transition: ease-in-out 0.2s;
 
-    ::-webkit-scrollbar{
-        width: 0;
-        height: 0;
+        &:hover{
+            border: 2px solid var(--secondary-color);
+            
+
+            
+        }
+
+        img{
+            width: 12vw;
+            border-radius: 0.9vh;
+        }
+        p{
+            color: var(--primary-dark);
+            font-size: 1.8vh;
+            margin-top: 1vh;
+        }
+        #subjectName{
+            color: var(--black-color);
+            font-size: 2vh;
+            margin-top: 2vh;
+            font-weight: 600;
+        }
+
     }
-
 
 }
-.app__coursepage-card{
+.app__coursepage-link{
+    margin-top: 2vh;
     display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    background-color: var(--primary-dark);
-    padding: 2vh;
-    gap: 3vh;
-    border-radius: 1vh;
+    align-items: center;
 
-    img{
-        width: 14vw;
-        border-radius: 0.5vh;
-    }
-    p{
-        color: var(--background-light);
-    }
+}
+h2{
+    color: var(--black-color);
+    font-size: 2.5vh;
+    margin-top: 8vh;
 }
