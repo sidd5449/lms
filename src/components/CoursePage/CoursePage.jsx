@@ -7,6 +7,8 @@ import { Link, Route } from 'react-router-dom';
 const CoursePage = () => {
 
   const [courses, setCourses] = useState([]);
+  const [notices, setNotices] = useState([]);
+
 
   useEffect(() => {
     const query = '*[_type == "subject"]';
@@ -14,7 +16,14 @@ const CoursePage = () => {
       .then((data) =>{
         setCourses(data);
       })
-  }, [])
+  }, []);
+  useEffect(() => {
+    const noticeQuery = '*[_type == "generalNotices"]';
+    client.fetch(noticeQuery)
+      .then((noticeData) =>{
+        setNotices(noticeData);
+      })
+  }, []);
 
   return (
     <div className="app__coursepage">
@@ -42,9 +51,17 @@ const CoursePage = () => {
         ))}
       </div>
       <div className="app__coursepage-notices">
-        <div className="app__coursepage-notices-wrapper">
-          <h2>Notices</h2>
-        </div>
+        <h2>Notices</h2>
+          {notices.map((notice, index) => (
+            <div className="app__notice">
+              
+                <div className="bullet"></div>
+              <div className="notice-wrap">  
+                <p id='notice'>{notice.notice}</p>
+                <p>{notice.date}</p>
+              </div>
+            </div>
+          ))}  
       </div>
       
     </div>
