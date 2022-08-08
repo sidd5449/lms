@@ -12,8 +12,8 @@ function App() {
       <Routes>
         
         <Route path='/' element = {<HomePage />} />
-        <Route path='login' element = {<Login />} />
-        <Route path='courses' element = {<Courses />} />
+        <Route path='/login' element = {<Login />} />
+        <Route path='/courses' element = {<Courses />} />
         <Route path='/courses/:_id' element = {<CourseInfo />} />
       </Routes>
     </div>
