@@ -3,7 +3,8 @@ Educater is a Learning Management System (LMS) that I created using ReactJS and 
 
 ![Screenshot (332)](https://user-images.githubusercontent.com/76845396/183310016-756c02cd-b21f-4f90-97a8-393eb977502e.png)
 
-![Screenshot (333)](https://user-images.githubusercontent.com/76845396/183310037-b2694a26-e8af-4895-aa72-d2b721e0184e.png)
+![Screenshot (334)](https://user-images.githubusercontent.com/76845396/183382884-e1e70aa6-82e8-45fb-ad0a-c388b5a08f26.png)
+
 
 Some of the important react modules used are as follows:
 1) @sanity/cli
