@@ -117,3 +117,50 @@ h2{
     // box-shadow: 3px 3px 10px red;
     
 }
+.app__upcoming{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 46vw;
+}
+.app__upcoming-sub{
+    display: flex;
+    justify-content: space-between;
+    width: 26vw;
+    align-items: center;
+    margin-top: 2vh;
+
+
+}
+.submit-btn{
+    button{
+        padding: 1vh 1vw;
+        border: 2px solid var(--tertiary-color);
+        border-radius: 1vh;
+        background: none;
+        cursor: pointer;
+        transition: all ease-in-out 0.2s;
+    }
+    &:hover{
+        button{
+            background-color: var(--tertiary-color);
+            color: var(--background-light);
+            border-radius: 1vh;
+    
+        }
+    }
+}
+.app__upcoming-sub-title{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    h3{
+        color: var(--black-color);
+        font-size: 2vh;
+    }
+    p{
+        font-size: 1.8vh;
+        color: var(--primary-dark);
+    }
+}

@@ -8,6 +8,7 @@ const CoursePage = () => {
 
   const [courses, setCourses] = useState([]);
   const [notices, setNotices] = useState([]);
+  const [submissions, setSubmissions] = useState([]);
 
 
   useEffect(() => {
@@ -23,6 +24,13 @@ const CoursePage = () => {
       .then((noticeData) =>{
         setNotices(noticeData);
         console.log(notices);
+      })
+  }, []);
+  useEffect(() => {
+    const query = '*[_type == "submissions"]';
+    client.fetch(query)
+      .then((submissionData) =>{
+        setSubmissions(submissionData);
       })
   }, []);
 
@@ -65,10 +73,25 @@ const CoursePage = () => {
             </div>
           ))}  
         </div>
-        <div className="app__upcoming">
-          
-        </div>
+        
       </div>
+        <div className="app__upcoming">
+            <h2>Upcoming Submissions</h2>
+            {submissions.map((submission, index) => (
+              <div className="app__upcoming-sub">
+                <div className="app__upcoming-sub-title">
+                  <h3>{submission.title}</h3>
+                  <p>{submission.dueDate}</p>
+                </div>
+                <Link to='/' className='submit-btn'>
+                  <button>
+                    Submit Now
+                  </button>
+                </Link>
+              </div>
+            ))}
+        </div>
+
       
     </div>
   )
