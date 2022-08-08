@@ -25,6 +25,11 @@
     a{
         text-decoration: none;
         color: var(--secondary-dark);
+        transition: all ease-in-out 0.2s;
+
+        &:hover{
+            color: var(--background-light);
+        }
     }
 
     

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { client, urlFor } from '../../client';
 import './CoursePage.scss';
 import { FiArrowRightCircle } from 'react-icons/fi';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const CoursePage = () => {
 
@@ -17,7 +17,7 @@ const CoursePage = () => {
       .then((data) =>{
         setCourses(data);
       })
-  }, []);
+  });
   useEffect(() => {
     const noticeQuery = '*[_type == "generalNotices"]';
     client.fetch(noticeQuery)
@@ -25,14 +25,14 @@ const CoursePage = () => {
         setNotices(noticeData);
         console.log(notices);
       })
-  }, []);
+  });
   useEffect(() => {
     const query = '*[_type == "submissions"]';
     client.fetch(query)
       .then((submissionData) =>{
         setSubmissions(submissionData);
       })
-  }, []);
+  });
 
   return (
     <div className="app__coursepage">
@@ -73,8 +73,6 @@ const CoursePage = () => {
             </div>
           ))}  
         </div>
-        
-      </div>
         <div className="app__upcoming">
             <h2>Upcoming Submissions</h2>
             {submissions.map((submission, index) => (
@@ -91,6 +89,9 @@ const CoursePage = () => {
               </div>
             ))}
         </div>
+        
+      </div>
+        
 
       
     </div>

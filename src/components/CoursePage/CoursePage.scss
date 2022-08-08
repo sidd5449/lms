@@ -78,8 +78,9 @@ h2{
 }
 .app__coursepage-notices{
     display: flex;
-    width: 46vw;
+    gap: 4vw;
     height: 66vh;
+
     overflow-y: auto;
 
 
@@ -89,6 +90,7 @@ h2{
     align-items: center;
     gap: 1vw;
     margin-top: 4vh;
+    width: 46vw;
 
     
 }
@@ -128,7 +130,7 @@ h2{
     justify-content: space-between;
     width: 26vw;
     align-items: center;
-    margin-top: 2vh;
+    margin-top: 4vh;
 
 
 }
