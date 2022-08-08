@@ -1,7 +1,6 @@
 import React from 'react';
 import './Navbar.scss';
-import { FiBookOpen, FiBookmark, FiSend, FiLayout, FiBook, FiLogOut } from 'react-icons/fi';
-import logo from '../../assets/logo.png';
+import { FiBookOpen, FiBookmark, FiSend, FiLayout, FiLogOut } from 'react-icons/fi';
 
 const Navbar = () => {
   return (
@@ -61,7 +60,7 @@ const Navbar = () => {
                 
               </a>
               <div className="logout">
-                <a href="">
+                <a href="/">
                   <div className="menu-item">
                     <FiLogOut 
                       color='#fc0303'
