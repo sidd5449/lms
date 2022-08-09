@@ -23,7 +23,6 @@ const CoursePage = () => {
     client.fetch(noticeQuery)
       .then((noticeData) =>{
         setNotices(noticeData);
-        console.log(notices);
       })
   }, []);
   useEffect(() => {

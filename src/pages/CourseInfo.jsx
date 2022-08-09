@@ -29,6 +29,7 @@ const CourseInfo = () => {
     });
     
     
+    
 
     
     
@@ -48,12 +49,13 @@ const CourseInfo = () => {
             ))}
         </div>
           
-          <div className="app__courseinfo-coursenotes">
-            {/* {subject?.map((subjectItem) => (
-              <div className="app__courseinfo-coursenotes-item">
-              </div>
-            ))} */}
-          </div>
+          {/* <div className="app__courseinfo-coursenotes">
+            {subArray.map(({subjectAssignment}) => (
+              <h2>{subjectAssignment._key}</h2>
+            ))}
+          </div> */}
+
+          {/* work on destructuring subjectAssignment and getting the _key value */}
     </div>
   )
 }
