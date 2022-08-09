@@ -17,7 +17,7 @@ const CoursePage = () => {
       .then((data) =>{
         setCourses(data);
       })
-  });
+  }, []);
   useEffect(() => {
     const noticeQuery = '*[_type == "generalNotices"]';
     client.fetch(noticeQuery)
@@ -25,14 +25,14 @@ const CoursePage = () => {
         setNotices(noticeData);
         console.log(notices);
       })
-  });
+  }, []);
   useEffect(() => {
     const query = '*[_type == "submissions"]';
     client.fetch(query)
       .then((submissionData) =>{
         setSubmissions(submissionData);
       })
-  });
+  }, []);
 
   return (
     <div className="app__coursepage">
