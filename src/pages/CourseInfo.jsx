@@ -17,7 +17,6 @@ const CourseInfo = () => {
         .then((subjectDatabyID) =>{
           setsubject(subjectDatabyID);
         })
-        console.log(subject);
     });
     useEffect(() => {
       const subQuery = `*[_id == "${docId._id}"]{subjectAssignment[]}`;
@@ -25,7 +24,6 @@ const CourseInfo = () => {
         .then((subArrayData) =>{
           setsubArray(subArrayData);
         })
-        console.log(subArray);
     });
     
     
@@ -41,21 +39,27 @@ const CourseInfo = () => {
 
         <Navbar />
         <div className="app__courseinfo-course">
-            {subject.map((subjectItem) => (
-              <div className="app__courseinfo-title">
-                <p id='courseName'>{subjectItem.subjectName}</p>
-                <p>Tutor: {subjectItem.subjectFac}</p>
-              </div>
-            ))}
+            <div className="app__courseinfo-ourse-item">
+              {subject.map((subjectItem) => (
+                <div className="app__courseinfo-title">
+                  <p id='courseName'>{subjectItem.subjectName}</p>
+                  <p>Tutor: {subjectItem.subjectFac}</p>
+                </div>
+              ))}
+            </div>
+            <div className="app__courseinfo-coursenotes">
+              {subArray.map(({subjectAssignment}) => {
+                return(subjectAssignment.map((item, index) => {
+                    return (<p key={index}>{item._key}</p>)
+                }))
+                })}
+            </div>
         </div>
           
-          {/* <div className="app__courseinfo-coursenotes">
-            {subArray.map(({subjectAssignment}) => (
-              <h2>{subjectAssignment._key}</h2>
-            ))}
-          </div> */}
+        
 
           {/* work on destructuring subjectAssignment and getting the _key value */}
+          {/* ref: https://bobbyhadz.com/blog/react-map-nested-array */}
     </div>
   )
 }
