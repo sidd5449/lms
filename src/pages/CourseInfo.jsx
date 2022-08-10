@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { client, urlFor } from '../client';
+import { client, getUrlFromId, urlFor } from '../client';
 import Navbar from '../components/Navbar/Navbar';
 import './CourseInfo.scss'
 
@@ -50,7 +50,12 @@ const CourseInfo = () => {
             <div className="app__courseinfo-coursenotes">
               {subArray.map(({subjectAssignment}) => {
                 return(subjectAssignment.map((item, index) => {
-                    return (<p key={index}>{item._key}</p>)
+                  console.log(subjectAssignment); 
+                  const fileLink = getUrlFromId(`${item.asset._ref}`);
+                  // console.log(fileLink);
+                  return (<p key={index}>{item._ref}</p>)
+                  
+                    
                 }))
                 })}
             </div>
@@ -58,8 +63,7 @@ const CourseInfo = () => {
           
         
 
-          {/* work on destructuring subjectAssignment and getting the _key value */}
-          {/* ref: https://bobbyhadz.com/blog/react-map-nested-array */}
+          
     </div>
   )
 }
