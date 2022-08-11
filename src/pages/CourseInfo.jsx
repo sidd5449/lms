@@ -8,6 +8,8 @@ const CourseInfo = () => {
     const docId = useParams();
     const [subject, setsubject] = useState([]);
     const [subArray, setsubArray] = useState([]);
+    const [notesArray, setnotesArray] = useState([]);
+  
     // const apiUrl = `https://cyhyv1x0.api.sanity.io/v2022-02-01/data/doc/production/`;
     // console.log(apiUrl);
     
@@ -16,16 +18,21 @@ const CourseInfo = () => {
       client.fetch(query)
         .then((subjectDatabyID) =>{
           setsubject(subjectDatabyID);
-          console.log(subject);
         })
     });
     useEffect(() => {
-      const subQuery = `*[_id == "${docId._id}"]{subjectAssignment[]}`;
-      client.fetch(subQuery)
-        .then((subArrayData) =>{
-          setsubArray(subArrayData);
-        })
+      subject.map((subjectItem) => {
+        const query = `*["${subjectItem.subjectName}" in tags]`;
+        client.fetch(query)
+          .then((notesData) =>{
+            setnotesArray(notesData);
+            console.log(notesArray);
+          })
+      })
     });
+
+    
+
     
     
     
@@ -49,16 +56,15 @@ const CourseInfo = () => {
               ))}
             </div>
             <div className="app__courseinfo-coursenotes">
-              {/* {subArray.map(({subjectAssignment}) => {
-                return(subjectAssignment.map((item, index) => {
-                  console.log(subjectAssignment); 
-                  const fileLink = getUrlFromId(`${item.asset._ref}`);
-                  // console.log(fileLink);
-                  return (<p key={index}>{item._ref}</p>)
-                  
-                    
-                }))
-                })} */}
+              {notesArray.map((notesItem) => {
+                const fileLink = getUrlFromId(`${notesItem.notesFile.asset._ref}`);
+                return(
+                  <div className="app__note-item">
+                    <h3>{notesItem.fileName}</h3>
+                    <a href={fileLink} target="_blank">Download</a>
+                  </div>
+                )
+              })}
             </div>
         </div>
           
