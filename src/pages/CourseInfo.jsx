@@ -16,6 +16,7 @@ const CourseInfo = () => {
       client.fetch(query)
         .then((subjectDatabyID) =>{
           setsubject(subjectDatabyID);
+          console.log(subject);
         })
     });
     useEffect(() => {
@@ -48,7 +49,7 @@ const CourseInfo = () => {
               ))}
             </div>
             <div className="app__courseinfo-coursenotes">
-              {subArray.map(({subjectAssignment}) => {
+              {/* {subArray.map(({subjectAssignment}) => {
                 return(subjectAssignment.map((item, index) => {
                   console.log(subjectAssignment); 
                   const fileLink = getUrlFromId(`${item.asset._ref}`);
@@ -57,7 +58,7 @@ const CourseInfo = () => {
                   
                     
                 }))
-                })}
+                })} */}
             </div>
         </div>
           
