@@ -1,8 +1,10 @@
 .app__courseinfo{
     display: flex;
+    width: 100vw;
 }
-.app__courseinfo-course{
+.app__courseinfo-wrapper{
     margin-left: 16vw;
+    width: 90vw;
     padding: 4vw;
     gap: 2vh;
     flex-direction: column;
@@ -11,8 +13,37 @@
         color: var(--primary-dark);
     }
 }
-#courseName{
-    font-size: 3vh;
-    color: var(--black-color);
-    font-weight: 600;
+.app__courseinfo-coursenotes{
+    flex-direction: column;
+    width: 35vw;
+    
+
+}
+.app__note-item{
+    display: flex;
+    align-items: center;
+    margin-top: 4vh;
+    width: 35vw;
+    justify-content: space-between;
+    gap: 2vh;
+}
+.app__note-item-desc{
+    display: flex;
+    align-items: center;
+}
+.app__note-item-title{
+    display: flex;
+    flex-direction: column;
+
+    h3{
+        font-size: 2vh;
+    }
+}
+.app__courseinfo-content{
+    display: flex;
+    width: 74vw;
+    justify-content: space-between;
+}
+.downloadIcon{
+    margin-left: 6vw;
 }
