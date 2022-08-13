@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { client, getUrlFromId, urlFor } from '../client';
+import { client, getUrlFromId } from '../client';
 import Navbar from '../components/Navbar/Navbar';
 import { FiDownload } from 'react-icons/fi';
 import './CourseInfo.scss'
@@ -8,7 +8,6 @@ import './CourseInfo.scss'
 const CourseInfo = () => {
   const docId = useParams();
   const [subject, setsubject] = useState([]);
-  const [subArray, setsubArray] = useState([]);
   const [notesArray, setnotesArray] = useState([]);
   const [submissions, setSubmissions] = useState([]);
 
@@ -28,7 +27,6 @@ const CourseInfo = () => {
       client.fetch(query)
         .then((notesData) => {
           setnotesArray(notesData);
-          console.log(notesArray);
         })
     })
   });
