@@ -80,7 +80,7 @@ const CourseInfo = () => {
                       <p>Uploaded on {notesItem._createdAt}</p>
                     </div>
                   </div>
-                  <Link to={fileLink} target="_blank" className='downloadIcon'>
+                  <a href={fileLink} target="_blank" className='downloadIcon'>
                     <FiDownload
                       size={20}
                       color='var(--tertiary-color)'
@@ -88,7 +88,7 @@ const CourseInfo = () => {
 
                     />
 
-                  </Link>
+                  </a>
 
 
                 </div>
