@@ -10,7 +10,7 @@ const Hero = () => {
 
         <div className="button-group">
           <a href="/login"><button>Get Started</button></a>
-          <a href="/courses" ><button id='secondary'>Courses</button></a>
+          <a href="/courses" ><button id='secondary'>Go to Dashboard</button></a>
         </div>
       </div>
       <div className="app__hero-right"></div>

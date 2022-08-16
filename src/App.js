@@ -15,6 +15,7 @@ function App() {
         <Route path='/login' element = {<Login />} />
         <Route path='/courses' element = {<Courses />} />
         <Route path='/courses/:_id' element = {<CourseInfo />} />
+        {/* <Route path='/submissions' element = {<Submission />} /> */}
       </Routes>
     </div>
   );
