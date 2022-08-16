@@ -22,18 +22,6 @@ const Navbar = () => {
                 
               </Link>
             
-              <Link to="/courses">
-                <div className="menu-item">
-                  <FiBookOpen
-                    color='var(--tertiary-color)'
-                    size={20}
-                    
-                  
-                  />
-                  <p>Courses</p>
-                </div>
-                
-              </Link>
             
               <Link to="/">
                 <div className="menu-item">

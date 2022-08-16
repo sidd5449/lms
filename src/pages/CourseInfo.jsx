@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { client, getUrlFromId } from '../client';
+import { client, getUrlFromId, urlFor } from '../client';
 import Navbar from '../components/Navbar/Navbar';
-import { FiDownload } from 'react-icons/fi';
+import { FiArrowRightCircle, FiDownload } from 'react-icons/fi';
 import './CourseInfo.scss'
 
 const CourseInfo = () => {
@@ -10,6 +10,7 @@ const CourseInfo = () => {
   const [subject, setsubject] = useState([]);
   const [notesArray, setnotesArray] = useState([]);
   const [submissions, setSubmissions] = useState([]);
+  const [textBooks, settextBooks] = useState([]);
 
   // const apiUrl = `https://cyhyv1x0.api.sanity.io/v2022-02-01/data/doc/production/`;
   // console.log(apiUrl);
@@ -23,7 +24,7 @@ const CourseInfo = () => {
   });
   useEffect(() => {
     subject.map((subjectItem) => {
-      const query = `*["${subjectItem.subjectName}" in tags]`;
+      const query = `*["${subjectItem.subjectName}" in tags && _type == "subNotes"]`;
       client.fetch(query)
         .then((notesData) => {
           setnotesArray(notesData);
@@ -37,6 +38,16 @@ const CourseInfo = () => {
         setSubmissions(submissionData);
       })
   }, []);
+  useEffect(() => {
+    subject.map((subjectItem) => {
+      const query = `*["${subjectItem.subjectName}" in tags && _type == "textbooks"]`;
+      client.fetch(query)
+        .then((booksData) => {
+          settextBooks(booksData);
+          console.log(textBooks);
+        })
+    })
+  });
 
 
 
@@ -110,6 +121,29 @@ const CourseInfo = () => {
                 </Link>
               </div>
             ))}
+          </div>
+        </div>
+        <div className="app__courseinfo-material">
+          <h2>Your Textbooks</h2>
+          <div className="app__courseinfo-textbooks">
+                
+                {textBooks.map((textBook) => {
+                  const bookfileLink = getUrlFromId(`${textBook.textbookFile.asset._ref}`);
+                  return(
+                    <div className="app__courseinfo-textbooks-item">
+                      
+                      <img src={urlFor(textBook.previewImg)} alt={textBook.bookName} />
+                      <p id='bookName'>{textBook.bookName}</p>
+                      <p>{textBook.bookAuthor}</p>
+                      <a href={bookfileLink} target='_blank' className = 'app__courseinfo-link'>
+                        <FiArrowRightCircle
+                        size={20}
+                        color= 'var(--tertiary-color)'
+                        />
+                      </a>
+                    </div>
+                  )
+                })}
           </div>
         </div>
         

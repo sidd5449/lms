@@ -18,14 +18,14 @@
         }
     }
 }
-.app__coursepage-cards{
+.app__coursepage-cards, .app__courseinfo-textbooks{
     display: flex;
     flex-wrap: wrap;
     padding: 4vh 0;
     width: 80vw;
     gap: 2vw;
     
-    .app__coursepage-card{
+    .app__coursepage-card, .app__courseinfo-textbooks-item{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -51,7 +51,7 @@
             margin-top: 1vh;
             text-align: left;
         }
-        #subjectName{
+        #subjectName, #bookName{
             color: var(--black-color);
             font-size: 2vh;
             margin-top: 2vh;
@@ -61,7 +61,7 @@
     }
 
 }
-.app__coursepage-link{
+.app__coursepage-link, .app__courseinfo-link{
     margin-top: 2vh;
     display: flex;
     align-items: center;

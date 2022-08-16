@@ -5,7 +5,6 @@ import Hero from '../components/Hero/Hero';
 const HomePage = () => {
   return (
     <div className='app__home'>
-      <Navbar />
       <Hero />
 
     </div>
