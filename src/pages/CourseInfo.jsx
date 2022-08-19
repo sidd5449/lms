@@ -44,7 +44,6 @@ const CourseInfo = () => {
       client.fetch(query)
         .then((booksData) => {
           settextBooks(booksData);
-          console.log(textBooks);
         })
     })
   });

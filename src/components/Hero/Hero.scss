@@ -1,50 +1,73 @@
 .app__hero{
     display: flex;
+    flex-direction: column;
+    padding: 2vw 4vw;
+}
+#title{
+    font-size: 4vh;
+    font-weight: 600;
+}
+.app__hero-navbar{
+    display: flex;
     justify-content: space-between;
-    padding: 6vw;
-    align-items: center;
+    width: 92vw;
+    padding: 0 4vw;
 
 }
-.app__hero-left{
+.app__hero-navbar-menu{
     display: flex;
-    flex-direction: column;
-    gap: 4vh;
-    align-items: flex-start;
-    width: 44vw;
-
-    h1{
-        font-size: 8vh;
-    }
-
-    p{
-        font-size: 3vh;
-    }
-
-    .button-group{
-        display: flex;
-        justify-content: space-between;
-        width: 22vw;
-        margin-top: 2vh;
-
-        a{
-            text-decoration: none;
+    gap: 3vw;
     
-            button{
-                border: none;
-                background-color: var(--primary-color);
-                padding: 2vh;
-                font-size: 2vh;
-                color: var(--background-light);
-                border-radius: 2vh;
-                box-shadow: 3px 2px 12px rgb(151, 154, 151);
+
+    a{
+        text-decoration: none;
+        color: var(--primary-dark);
+        
+        
+        p{
+            border-bottom: 2px solid transparent;
+            transition: all ease-in-out 0.2s;
+            padding-bottom: 4px;
+
+            &:hover{
+                color: var(--tertiary-color);
+                border-bottom: 2px solid var(--tertiary-color);
+                border-radius: 2px;
             }
         }
+        
+        
+    }
+}
+.app__hero-main{
+    display: flex;
+}
+.app__hero-main-left{
+    width: 42vw;
+    padding: 8vw 4vw;
+    display: flex;
+    flex-direction: column;
+
+    p{
+        font-size: 2.5vh;
+    }
+}
+#title-main{
+    font-size: 7vh;
+    font-weight: 600;
+    padding-bottom: 2vh;
+
+    span{
+        border-bottom: 3px solid var(--);
+        border-radius: 2px;
+        color: var(--secondary-color);
+        
     }
 
 }
-
-#secondary{
-    background: none;
-    border: 2px solid var(--tertiary-color);
-    color: var(--primary-dark);
+.app__hero-main-left-icons{
+    display: flex;
+    justify-content: space-between;
+    width: 18vw;
+    margin-top: 6vh;
 }
