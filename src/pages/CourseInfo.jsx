@@ -36,6 +36,7 @@ const CourseInfo = () => {
     client.fetch(query)
       .then((submissionData) => {
         setSubmissions(submissionData);
+        console.log(submissions);
       })
   }, []);
   useEffect(() => {
@@ -113,7 +114,7 @@ const CourseInfo = () => {
                   <h3>{submission.title}</h3>
                   <p>{submission.dueDate}</p>
                 </div>
-                <Link to='/' className='submit-btn'>
+                <Link to={submission._id} className='submit-btn'>
                   <button>
                     Submit Now
                   </button>
