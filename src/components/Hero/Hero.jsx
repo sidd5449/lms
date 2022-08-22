@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Hero.scss';
+import Illus1 from '../../assets/illus.svg';
 
 const Hero = () => {
   return (
@@ -18,7 +19,7 @@ const Hero = () => {
         <div className="app__hero-main-left">
           <h1 id='title-main'><span>EduCater</span> - LMS</h1>
           <p>An efficient Learning Management System for all your online education needs!</p>
-          <div className="app__hero-main-left-icons">
+          <div className="app__hero-main-left-btns">
             <Link to='courses'>
               <button>
                 DashBoard
@@ -26,14 +27,18 @@ const Hero = () => {
 
             </Link>
             <Link to='courses'>
-              <button>
+              <button id='signup'>
                 Sign Up
               </button>
 
             </Link>
           </div>
         </div>
-        <div className="app__hero-main-right"></div>
+        <div className="app__hero-main-right">
+          <div className="app__hero-main-right-img">
+            <img src={Illus1} alt="" />
+          </div>
+        </div>
       </div>
     </div>
   )

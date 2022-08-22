@@ -44,6 +44,7 @@
 }
 .app__hero-main-left{
     width: 42vw;
+    margin-top: 6vh;
     padding: 8vw 4vw;
     display: flex;
     flex-direction: column;
@@ -60,14 +61,38 @@
     span{
         border-bottom: 3px solid var(--);
         border-radius: 2px;
-        color: var(--secondary-color);
+        color: var(--black-color);
         
     }
 
 }
-.app__hero-main-left-icons{
+.app__hero-main-left-btns{
     display: flex;
     justify-content: space-between;
     width: 18vw;
     margin-top: 6vh;
+
+    button{
+        padding: 2vh 3vh;
+        background: none;
+        border-radius: 2vh;
+        border: 2px solid var(--tertiary-color);
+        font-size: 2vh;
+        cursor: pointer;
+        transition: all ease-in-out 0.2s;
+
+        &:hover{
+            box-shadow: 2px 2px 15px var(--secondary-dark);
+        }
+
+    }
 }
+#signup{
+    background-color: var(--tertiary-color);
+    color: var(--background-light);
+
+}
+.app__hero-main-right{
+    margin-top: 4vh;
+}
+
