@@ -2,8 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Hero.scss';
 import Illus1 from '../../assets/illus.svg';
+import { useAuth0 } from '@auth0/auth0-react';
 
 const Hero = () => {
+
+  const {loginWithPopup, user, isAuthenticated} = useAuth0();
+
   return (
     <div className="app__hero">
       <div className="app__hero-navbar">
@@ -26,12 +30,10 @@ const Hero = () => {
               </button>
 
             </Link>
-            <Link to='courses'>
-              <button id='signup'>
+              <button id='signup' onClick={loginWithPopup}>
                 Sign Up
               </button>
 
-            </Link>
           </div>
         </div>
         <div className="app__hero-main-right">
