@@ -5,20 +5,24 @@ import Login from './pages/Login';
 import Courses from './pages/Courses';
 import CourseInfo from './pages/CourseInfo';
 import Submission from './pages/Submission';
-import { ProtectedRoute } from './components/protectedRoute';
+import SignUp from './pages/SignUp';
+import Reset from './pages/Reset';
+
 
 
 function App() {
+
   return (
     <div className="App">
-      
       <Routes>
         
         <Route path='/' element = {<HomePage />} />
         <Route path='/login' element = {<Login />} />
-        <Route path='/courses' element = {<ProtectedRoute component={Courses} />} />
-        <Route path='/courses/:_id' element = {<ProtectedRoute component={CourseInfo} />} />
-        <Route path='/courses/:_id/:_id' element = {<ProtectedRoute component={Submission} />} />
+        <Route path='/register' element = {<SignUp />} />
+        <Route path='/reset-pass' element = {<Reset />} />
+        <Route path='/courses' element = {<Courses />} />
+        <Route path='/courses/:_id' element = {<CourseInfo/>} />
+        <Route path='/courses/:_id/:_id' element = {<Submission />} />
       </Routes>
     </div>
   );

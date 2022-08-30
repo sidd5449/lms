@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 import './Hero.scss';
 import Illus1 from '../../assets/illus.svg';
 import { useAuth0 } from '@auth0/auth0-react';
+import Courses from '../../pages/Courses';
 
 const Hero = () => {
 
   const {loginWithPopup, user, isAuthenticated} = useAuth0();
+
 
   return (
     <div className="app__hero">
