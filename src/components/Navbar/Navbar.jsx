@@ -2,6 +2,7 @@ import React from 'react';
 import './Navbar.scss';
 import { FiBookOpen, FiBookmark, FiSend, FiLayout, FiLogOut } from 'react-icons/fi';
 import { Link } from 'react-router-dom'; 
+import { logout } from '../../utils/fbConfig';
 
 const Navbar = () => {
   return (
@@ -49,7 +50,7 @@ const Navbar = () => {
                 
               </Link>
               <div className="logout">
-                <a href="/">
+                <a href="/" onClick={logout}>
                   <div className="menu-item">
                     <FiLogOut 
                       color='#fc0303'
