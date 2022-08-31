@@ -7,38 +7,7 @@
     font-size: 4vh;
     font-weight: 600;
 }
-.app__hero-navbar{
-    display: flex;
-    justify-content: space-between;
-    width: 92vw;
-    padding: 0 4vw;
 
-}
-.app__hero-navbar-menu{
-    display: flex;
-    gap: 3vw;
-    
-
-    a{
-        text-decoration: none;
-        color: var(--primary-dark);
-        
-        
-        p{
-            border-bottom: 2px solid transparent;
-            transition: all ease-in-out 0.2s;
-            padding-bottom: 4px;
-
-            &:hover{
-                color: var(--tertiary-color);
-                border-bottom: 2px solid var(--tertiary-color);
-                border-radius: 2px;
-            }
-        }
-        
-        
-    }
-}
 .app__hero-main{
     display: flex;
 }

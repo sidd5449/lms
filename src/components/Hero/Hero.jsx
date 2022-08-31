@@ -12,15 +12,7 @@ const Hero = () => {
 
   return (
     <div className="app__hero">
-      <div className="app__hero-navbar">
-        <div className="app__hero-navbar-logo">
-          <h3 id='title'>EduCater</h3>
-        </div>
-        <div className="app__hero-navbar-menu">
-          <a href="/"><p>Home</p></a>
-          <a href="/courses"><p>Dashboard</p></a>
-        </div>
-      </div>
+      
       <div className="app__hero-main">
         <div className="app__hero-main-left">
           <h1 id='title-main'><span>EduCater</span> - LMS</h1>

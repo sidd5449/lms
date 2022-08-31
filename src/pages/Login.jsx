@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import { auth, logInWithEmailAndPassword, signInWithGoogle } from "../utils/fbConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
+import './Login.scss';
+import HNav from '../components/HNav/HNav';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -16,36 +18,39 @@ const Login = () => {
     if (user) navigate("/courses");
   }, [user, loading]);
   return (
-    <div className="login">
-      <div className="login__container">
+    
+    <div className="app__login">
+      <HNav />
+      <div className="app__login-container">
+        <h2 id='log-login'>Login</h2>
         <input
           type="text"
-          className="login__textBox"
+          className="app__login-textBox"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="E-mail Address"
+          placeholder="E-mail Address..."
         />
         <input
           type="password"
-          className="login__textBox"
+          className="app__login-textBox"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
+          placeholder="Password..."
         />
         <button
-          className="login__btn"
+          className="app__login-btn"
           onClick={() => logInWithEmailAndPassword(email, password)}
         >
           Login
         </button>
-        <button className="login__btn login__google" onClick={signInWithGoogle}>
+        {/* <button className="app__login-btn login-google" onClick={signInWithGoogle}>
           Login with Google
-        </button>
-        <div>
+        </button> */}
+        {/* <div>
           <Link to="/reset">Forgot Password</Link>
-        </div>
-        <div>
-          Don't have an account? <Link to="/register">Register</Link> now.
+        </div> */}
+        <div className='app__login-reg'>
+          Don't have an account?  <Link to="/register" id='regLink'> Register</Link> now.
         </div>
       </div>
     </div>

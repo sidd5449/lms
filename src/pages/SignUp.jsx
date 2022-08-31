@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
+import HNav from "../components/HNav/HNav";
 import {auth,
   registerWithEmailAndPassword,
   signInWithGoogle,
 } from "../utils/fbConfig";
+import "./Login.scss";
 
 const SignUp = () => {
     const [email, setEmail] = useState("");
@@ -21,40 +23,42 @@ const SignUp = () => {
       if (user) history.replace("/dashboard");
     }, [user, loading]);
     return (
-      <div className="register">
-        <div className="register__container">
+      <div className="app__register">
+        <HNav />
+        <div className="app__register-container">
+          <h2 id="sign-signup">Register</h2>
           <input
             type="text"
-            className="register__textBox"
+            className="app__register-textBox"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Full Name"
+            placeholder="Full Name..."
           />
           <input
             type="text"
-            className="register__textBox"
+            className="app__register-textBox"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="E-mail Address"
+            placeholder="E-mail Address..."
           />
           <input
             type="password"
-            className="register__textBox"
+            className="app__register-textBox"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
+            placeholder="Password..."
           />
-          <button className="register__btn" onClick={register}>
+          <button className="app__register-btn" onClick={register}>
             Register
           </button>
-          <button
-            className="register__btn register__google"
+          {/* <button
+            className="app__register-btn register__google"
             onClick={signInWithGoogle}
           >
             Register with Google
-          </button>
-          <div>
-            Already have an account? <Link to="/">Login</Link> now.
+          </button> */}
+          <div className="app__register-login">
+            Already have an account? <Link to="/login" id="logLink">Login</Link> now.
           </div>
         </div>
       </div>
